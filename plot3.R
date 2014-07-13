@@ -25,8 +25,8 @@ epowdata <- cbind(datetime, epowdata)
 # create appropriate plot directly to file to avoid legend truncation
 # and turn off associated devices
 png(filename="plot3.png", width=480, height=480)
-plot(epowdata$datetime, epowdata$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", col="black")
-lines(epowdata$datetime, epowdata$Sub_metering_2,type = "l", col = "red")
-lines(epowdata$datetime, epowdata$Sub_metering_3,type = "l", col = "blue")
+plot(epowdata$datetime, as.numeric(epowdata$Sub_metering_1), type="l", xlab="", ylab="Energy sub metering", col="black")
+lines(epowdata$datetime, as.numeric(epowdata$Sub_metering_2),type = "l", col = "red")
+lines(epowdata$datetime, as.numeric(epowdata$Sub_metering_3),type = "l", col = "blue")
 legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), box.col="black", lty=1, xjust=0.5, cex=0.95)
 dev.off()
